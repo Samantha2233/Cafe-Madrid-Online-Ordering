@@ -9,7 +9,7 @@ const dishSchema = new mongoose.Schema ({
     },
     dishPrice:
     {
-        type: number
+        type: Number
     },
     dishType: {
         type: String,
