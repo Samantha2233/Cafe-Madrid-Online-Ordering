@@ -1,37 +1,19 @@
-var express = require('express');
-var router = express.Router();
-var passport = require('passport');
+const express = require('express');
+const router = express.Router();
+
 
 
 
 /* GET home page. */ //root route
-router.get('/', function(req, res, next) {
-  res.render('menus/lunch', { 
+router.get('/', function(req, res) {
+  res.render('menus/lunch', {
+    customer: req.user,
     title: 'Lunch | Cafe Madrid',
     pageH1: 'Lunch Menu'
    });
 });
 
-//google OAuth login route
-router.get('/auth/google', passport.authenticate(
-  'google',
-  { scope: ['profile', 'email']}
-));
 
-//Google OAuth callback route
-router.get('/oauth2callback', passport.authenticate(
-  'google',
-  {
-    successRedirect: '/lunch',
-    failureRedirect: '/lunch'
-  }
-));
-
-// OAuth logout route
-router.get('/logout', function(req, res){
-  req.logout();
-  res.redirect('/lunch');
-})
 
 
 module.exports = router;

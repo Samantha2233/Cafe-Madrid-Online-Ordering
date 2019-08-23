@@ -11,9 +11,12 @@ passport.use(new GoogleStrategy({
 },
     function(accessToken, refreshToken, profile, cb) {
         // a customer has logged in with OAuth...
+        console.log(profile);
         Customer.findOne({ googleId: profile.id }, function(err, customer) {
+
             if (err) return cb(err);
             if (customer) {
+                console.log('has customer');
                 return cb(null, customer);
             } else {
                 // we have a new customer via OAuth!
@@ -23,7 +26,8 @@ passport.use(new GoogleStrategy({
                     googleId: profile.id
                 });
                 newCustomer.save(function(err){
-                    return cb(null, customer);
+                    console.log(newCustomer)
+                    return cb(null, newCustomer);
                 });
             }
         });

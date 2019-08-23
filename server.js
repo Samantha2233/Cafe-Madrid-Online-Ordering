@@ -8,15 +8,15 @@ var session = require('express-session');
 var passport = require('passport');
 // load env variables
 require('dotenv').config();
-
 require('./config/database');
 require('./config/passport');
 
 //require method override to put or delete data from server
 var methodOverride = require('method-override');
 
+var indexRouter = require('./routes/index');
 var lunchRouter = require('./routes/lunch');
-var usersRouter = require('./routes/users');
+// var usersRouter = require('./routes/users');
 
 var app = express();
 
@@ -41,8 +41,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride('method'));
 
 
-app.use('/', lunchRouter);
-app.use('/users', usersRouter);
+app.use('/lunch', lunchRouter);
+app.use('/', indexRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

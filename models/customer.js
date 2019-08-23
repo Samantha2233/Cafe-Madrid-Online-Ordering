@@ -1,6 +1,5 @@
 var mongoose = require('mongoose');
 
-
 const orderSchema = new mongoose.Schema ({
     orderId: {
         type: Number
@@ -9,7 +8,7 @@ const orderSchema = new mongoose.Schema ({
         type: Array
     },
     totalPrice: {
-
+        type: Number
     }
 },{
     timestamps: true
@@ -29,8 +28,7 @@ const customerSchema = new mongoose.Schema ({
     },
     phone: {
         type: Number,
-        match: /^\d{3}-\d{3}-\d{4}$/,
-        required: true
+        match: /^\d{3}-\d{3}-\d{4}$/
     },
     order : [orderSchema]
 }, {
