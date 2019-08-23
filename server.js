@@ -4,10 +4,13 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+var session = require('express-session');
+var passport = require('passport');
 // load env variables
 require('dotenv').config();
 
 require('./config/database');
+require('./config/passport');
 
 //require method override to put or delete data from server
 var methodOverride = require('method-override');
@@ -25,6 +28,15 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+
+app.use(session({
+  secret: 'CafeMadridRocks!',
+  resave: false,
+  saveUninitialized: true
+}));
+app.use(passport.initialize());
+app.use(passport.session());
+
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride('method'));
 

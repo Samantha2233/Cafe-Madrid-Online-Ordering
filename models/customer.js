@@ -1,14 +1,25 @@
 var mongoose = require('mongoose');
 
-const customerSchema = new mongoose.Schema ({
-    customerId: {
+
+const orderSchema = new mongoose.Schema ({
+    orderId: {
         type: Number
     },
-    firstName: {
-        type: String,
-        required: true
+    orderContent: {
+        type: Array
     },
-    lastName: {
+    totalPrice: {
+
+    }
+},{
+    timestamps: true
+})
+
+const customerSchema = new mongoose.Schema ({
+    googleId: {
+        type: String
+    },
+    name: {
         type: String,
         required: true
     },
@@ -20,7 +31,8 @@ const customerSchema = new mongoose.Schema ({
         type: Number,
         match: /^\d{3}-\d{3}-\d{4}$/,
         required: true
-    }
+    },
+    order : [orderSchema]
 }, {
     timestamps: true
 })

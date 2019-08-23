@@ -1,5 +1,22 @@
 var mongoose = require('mongoose');
 
+
+const dishAddOnSchema = new mongoose.Schema({
+    dishAddOn: {
+        type: String,
+        price: Number
+    }
+})
+
+const dishAmountAndPriceSchema = new mongoose.Schema({
+    dishAmount: {
+        type: String
+    },
+    dishPrice: {
+        type: Number
+    }
+})
+
 const dishSchema = new mongoose.Schema ({
     dishName: {
         type: String
@@ -7,10 +24,8 @@ const dishSchema = new mongoose.Schema ({
     dishDescription: {
         type: String
     },
-    dishPrice:
-    {
-        type: Number
-    },
+    dishAmountAndPrice: [dishAmountAndPriceSchema],
+    dishAddOn: [dishAddOnSchema],
     dishType: {
         type: String,
         enum: ['Soup', 'Salad', 'Sandwich'],
