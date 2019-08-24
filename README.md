@@ -9,11 +9,11 @@ I had the privilege making Cafe Madrid's website on Wix a few years ago. Wix has
 
 ### Technologies Used
 
-Node & Express
-Mongoose & MongoDB
-Passport for OAuth Authentication
-JavaScript ES6
-EJS Templates, HTML5, CSS3, Bootstrap
+* Node & Express
+* Mongoose & MongoDB
+* Passport for OAuth Authentication
+* JavaScript ES6
+* EJS Templates, HTML5, CSS3, Bootstrap
 
 ### What's Next?
 
