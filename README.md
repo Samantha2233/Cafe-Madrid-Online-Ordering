@@ -1,4 +1,4 @@
-![Cafe Madrid Logo](public/images/cafe-madrid-logo.png)
+![Cafe Madrid Logo](/images/cafe-madrid-logo.png) {:width = "300px"}
 
 # Cafe Madrid
 ## Online Ordering
