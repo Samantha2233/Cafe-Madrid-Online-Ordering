@@ -1,4 +1,4 @@
-![Cafe Madrid Logo](/images/cafe-madrid-logo.png) {:width = "300px"}
+<img src="public/images/cafe-madrid-logo.png" alt="Cafe Madrid Logo" width="300px">
 
 # Cafe Madrid
 ## Online Ordering
