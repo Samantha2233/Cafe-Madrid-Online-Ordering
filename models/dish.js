@@ -29,7 +29,6 @@ const dishSchema = new mongoose.Schema ({
     dishType: {
         type: String,
         enum: ['Soup', 'Salad', 'Sandwich'],
-        required: true
     }
 
 }, {
