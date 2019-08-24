@@ -1,3 +1,5 @@
+![Cafe Madrid Logo](public/images/cafe-madrid-logo.png)
+
 # Cafe Madrid
 ## Online Ordering
 
