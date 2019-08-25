@@ -1,12 +1,20 @@
+require('dotenv').config();
 require('./config/database');
 const Dish = require('./models/dish');
 const data = require('./data');
-var mongoose = require('mongoose');
-require('dotenv').config();
 
 
 Dish.deleteMany({})
 .then(function(results){
     console.log(results);
+})
+.then(function(results){
+    console.log(results);
+    return Dish.create(data.dishes)
+}).then(function(dishes){
+    console.log('//////////////////////');
+    console.log(dishes);
+}).then(function(){
+    console.log(Dish);
     process.exit();
 });

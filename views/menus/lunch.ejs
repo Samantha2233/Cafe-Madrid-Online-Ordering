@@ -26,17 +26,24 @@
 
         <div class="menu-section" id="soups">
             <h2>Sopas : Soups</h2>
-            <div class="menu-item">
-                <h3> dishName  </h3>
-                <p> dishDescription </p>
-                <p class="price"> dishPrice </p>
-                <p class="price"> dishPrice </p>
-                <p class="price"> dishPrice </p>
-                <div class="add-on">
-                    <p class="description">Extra Warm Bacci Roll with Butter</p>
-                    <p class="price">+$0.75</p>
-                </div>
-            </div>
+
+            <% dishes.forEach(function(dish){ %>
+                <div class="menu-item">
+                        <h3>  dish.name  </h3>
+                        <p> dish.description </p>
+                        <p class="price"> dishPrice </p>
+                        <p class="price"> dishPrice </p>
+                        <p class="price"> dishPrice </p>
+                        <div class="add-on">
+                            <p class="description">Extra Warm Bacci Roll with Butter</p>
+                            <p class="price">+$0.75</p>
+                        </div>
+                    </div>
+            <% }) %>
+
+           
+
+
         </div>
         
         <img src="images/soup-and-salad.jpg" class="banner" alt="Cafe Madrid Soup & Salad">
