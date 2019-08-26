@@ -32,7 +32,6 @@ h2 {
 
 h3 {
 	font-family: 'Quicksand', sans-serif;
-	text-transform: uppercase;
 	letter-spacing: 5;
 }
 
@@ -127,6 +126,11 @@ hr {
 	list-style: none;
 }
 
+#profile-img {
+	width: 50px;
+	background-color: red;
+}
+
 
 #logo {
 	width: 175px;
@@ -138,6 +142,11 @@ hr {
 	display: none;
 }
 
+#exit {
+	height: 20px;
+	margin: 15px;
+	display: none;
+}
 
 @media screen and (max-width: 950px) {
 	.nav li:not(:first-child) {
@@ -148,6 +157,28 @@ hr {
 
 	}
 }
+
+
+#mobile-nav {
+	display: none;
+	width: 100vw;
+	height: 100vh;
+	background-color: white;
+	margin-top: 100px;
+}
+
+#mobile-nav ul {
+	list-style: none;
+	margin: 10px auto;
+	text-align: center;
+	padding-top: 20px;
+}
+
+#mobile-nav li{
+	padding: 8px 0;
+	font-size: 20px;
+}
+
 
 
 
@@ -200,7 +231,6 @@ header img {
 	padding: 20px;
 	position: relative;
 	min-width: 250px;
-	
 	}
 
 	/* @media screen and (max-width: 900px) {
@@ -219,9 +249,7 @@ header img {
 	display: flex;
 }
 	
-.show {
-	display: block;
-}
+
 	
 .menu-arrow {
 	width: 15px;
@@ -268,7 +296,9 @@ header img {
 }	
 	
 	
-
+.show {
+	display: block;
+}
 
 
 

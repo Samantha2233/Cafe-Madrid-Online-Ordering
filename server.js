@@ -42,7 +42,7 @@ app.use(methodOverride('method'));
 
 
 app.use('/', indexRouter);
-app.use('/lunch', lunchRouter);
+app.use('/', lunchRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

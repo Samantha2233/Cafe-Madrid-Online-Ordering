@@ -1,18 +1,5 @@
 var mongoose = require('mongoose');
 
-const orderSchema = new mongoose.Schema ({
-    orderId: {
-        type: Number
-    },
-    orderContent: {
-        type: Array
-    },
-    totalPrice: {
-        type: Number
-    }
-},{
-    timestamps: true
-})
 
 const customerSchema = new mongoose.Schema ({
     googleId: {
@@ -30,7 +17,10 @@ const customerSchema = new mongoose.Schema ({
         type: Number,
         match: /^\d{3}-\d{3}-\d{4}$/
     },
-    order : [orderSchema]
+    orders : {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Customer'
+    }
 }, {
     timestamps: true
 })

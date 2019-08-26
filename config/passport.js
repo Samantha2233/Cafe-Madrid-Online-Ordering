@@ -16,6 +16,7 @@ passport.use(new GoogleStrategy({
 
             if (err) return cb(err);
             if (customer) {
+                console.log(profile);
                 console.log('has customer');
                 return cb(null, customer);
             } else {

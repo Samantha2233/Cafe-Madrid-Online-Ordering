@@ -6,8 +6,8 @@ exports.dishes = [
             {amount:'Cup', price:'7'},
             {amount:'Bowl', price:'10'},
             {amount:'Quart', price:'16'},],
-        addOn: [{addOn:'Warm Bacci Roll with Butter', price:'.75'}],
-        type:'Soup'
+        addOns: [{addOn:'Warm Bacci Roll with Butter', price:'.75'}],
+        category:'Soup'
     },
     {
         name: 'Mediterranean Salad', 
@@ -15,7 +15,7 @@ exports.dishes = [
         amountAndPrice:[
             {amount:'Half Order', price:'11.50'},
             {amount:'Full Order', price:'13.50'}],
-        type:'Salad'
+        category:'Salad'
     },
     {
         name: 'Caprese Salad', 
@@ -23,7 +23,7 @@ exports.dishes = [
         amountAndPrice:[
             {amount:'Half Order', price:'10.50'},
             {amount:'Full Order', price:'12.50'}],
-        type:'Salad'
+        category:'Salad'
     },
     {
         name: 'Gaudi Salad', 
@@ -31,7 +31,7 @@ exports.dishes = [
         amountAndPrice:[
             {amount:'Half Order', price:'11.50'},
             {amount:'Full Order', price:'13.50'}],
-        type:'Salad'
+        category:'Salad'
     },
     {
         name: 'Mixta Salad', 
@@ -42,7 +42,7 @@ exports.dishes = [
         addOn: [{addOn:'Grilled Chicken', price:'5.00'},
                 {addOn:'Shrimp', price:'6.00'},
                 {addOn:'Salmon', price:'8.00'}],
-        type:'Salad'
+        category:'Salad'
     },
     {
         name: 'Beef Tenderloin Sandwich', 
@@ -51,7 +51,7 @@ exports.dishes = [
             {amount:'Bacci Roll', price:'10.00'},
             {amount:'Half Ciabatta', price:'10.00'},
             {amount:'Full Ciabatta', price:'13.50'}],
-        type:'Sandwich'
+        category:'Sandwich'
     },
     {
         name: 'Mediterranean Chicken Pesto', 
@@ -60,7 +60,7 @@ exports.dishes = [
             {amount:'Bacci Roll', price:'8.00'},
             {amount:'Half Ciabatta', price:'8.00'},
             {amount:'Full Ciabatta', price:'12.00'}],
-        type:'Sandwich'
+        category:'Sandwich'
     },
     {
         name: 'Grand Gaudi BLT', 
@@ -69,7 +69,7 @@ exports.dishes = [
             {amount:'Bacci Roll', price:'8.00'},
             {amount:'Half Ciabatta', price:'8.00'},
             {amount:'Full Ciabatta', price:'12.00'}],
-        type:'Sandwich'
+        category:'Sandwich'
     },
     {
         name: 'BLT', 
@@ -78,7 +78,7 @@ exports.dishes = [
             {amount:'Bacci Roll', price:'7.00'},
             {amount:'Half Ciabatta', price:'7.00'},
             {amount:'Full Ciabatta', price:'11.00'}],
-        type:'Sandwich'
+        category:'Sandwich'
     },
     {
         name: 'Riser Breakfast Sandwich', 
@@ -88,7 +88,7 @@ exports.dishes = [
             {amount:'Half Ciabatta', price:'8.00'},
             {amount:'Full Ciabatta', price:'12.00'}],
         addOn: [{addOn:'Avocado', price:'1.00'}],
-        type:'Sandwich'
+        category:'Sandwich'
     },
     {
         name: 'Pork Tenderloin', 
@@ -97,7 +97,7 @@ exports.dishes = [
             {amount:'Bacci Roll', price:'10.00'},
             {amount:'Half Ciabatta', price:'10.00'},
             {amount:'Full Ciabatta', price:'13.50'}],
-        type:'Sandwich'
+        category:'Sandwich'
     },
     {
         name: 'Veggie Melt', 
@@ -106,7 +106,7 @@ exports.dishes = [
             {amount:'Bacci Roll', price:'8.00'},
             {amount:'Half Ciabatta', price:'8.00'},
             {amount:'Full Ciabatta', price:'12.00'}],
-        type:'Sandwich'
+        category:'Sandwich'
     },
     {
         name: 'Veggie Light', 
@@ -115,7 +115,7 @@ exports.dishes = [
             {amount:'Bacci Roll', price:'7.00'},
             {amount:'Half Ciabatta', price:'7.00'},
             {amount:'Full Ciabatta', price:'11.00'}],
-        type:'Sandwich'
+        category:'Sandwich'
     },
     {
         name: 'Chicken Cordon Bleu', 
@@ -124,7 +124,7 @@ exports.dishes = [
             {amount:'Bacci Roll', price:'8.00'},
             {amount:'Half Ciabatta', price:'8.00'},
             {amount:'Full Ciabatta', price:'12.00'}],
-        type:'Sandwich'
+        category:'Sandwich'
     },
     {
         name: 'Jamon Serrano & Chorizo', 
@@ -133,7 +133,7 @@ exports.dishes = [
             {amount:'Half Baguette', price:'8.00'},
             {amount:'Full Baguette', price:'12.00'}],
         addOn: [{addOn:'Manchego Cheese', price:'1.50'}],
-        type:'Sandwich'
+        category:'Sandwich'
     },
     {
         name: 'Bocadillo de Albondigas Caseras', 
@@ -141,6 +141,6 @@ exports.dishes = [
         amountAndPrice:[
             {amount:'Half Baguette', price:'8.25'},
             {amount:'Full Baguette', price:'13.50'}],
-        type:'Sandwich'
+        category:'Sandwich'
     },
 ];

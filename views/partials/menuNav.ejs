@@ -7,12 +7,9 @@
         </div>
             
 
-        <% function toggleMenus() { %>
-            <% var menu = document.getElementsByClassName("drowdown-content"); %>
-            <% menu.classList.toggle("show"); %>
-        <% } %>
+       
 
-            <ul class="dropdown-content" onclick="toggleMenus">
+            <ul class="dropdown-content">
                 <li><a href="#tapas">Tapas</a></li>
                 <li><a href="#soups">Soups</a></li>
                 <li><a href="#salads">Salads</a></li>
@@ -35,3 +32,47 @@
         </div>
     </ul>
 </div>
+
+
+<script>
+
+    //event delegation
+    let selected;
+
+    let dropdown = document.querySelectorAll('.dropdown-line');
+    
+    console.log(dropdown);
+    dropdown.addEventListener('click', toggleMenus);
+    
+    
+    function toggleMenus(event) {
+        let target = event.target;
+        console.log(target);
+        console.log('CLICKED!');
+    };
+    
+
+    //     var dropdownContent = document.querySelectorAll("drowdown-content"); 
+    //     dropdownContent.classList.toggle("show");
+
+
+
+
+// let selectedTd;
+
+// table.onclick = function(event) {
+//   let target = event.target; 
+
+//   if (target.tagName != 'TD') return; 
+
+//   highlight(target); 
+// };
+
+// function highlight(td) {
+//   if (selectedTd) { 
+//     selectedTd.classList.remove('highlight');
+//   }
+//   selectedTd = td;
+//   selectedTd.classList.add('highlight'); 
+// }
+</script>
