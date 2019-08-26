@@ -41,8 +41,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride('method'));
 
 
-app.use('/lunch', lunchRouter);
 app.use('/', indexRouter);
+app.use('/lunch', lunchRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -1,6 +1,5 @@
 const express = require('express');
 const router = express.Router();
-
 var dishCtrl = require('../controllers/dish');
 
 /* GET home page. */ //root route

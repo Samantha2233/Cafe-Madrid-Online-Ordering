@@ -6,6 +6,7 @@ module.exports = {
 
 function index(req, res){
     res.render('menus/lunch', {
-        customer: req.user
+        customer: req.user,
+        // name: req.user.name
     });
 }

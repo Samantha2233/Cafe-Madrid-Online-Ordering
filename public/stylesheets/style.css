@@ -119,6 +119,7 @@ hr {
 	margin: 0;
 	width: 100%;
 	z-index: 10;
+	justify-content: space-between;
 }
 
 .nav li {
@@ -127,14 +128,26 @@ hr {
 }
 
 
-
-
-
-
 #logo {
 	width: 175px;
 }
 
+#hamburger {
+	height: 20px;
+	margin: 15px;
+	display: none;
+}
+
+
+@media screen and (max-width: 950px) {
+	.nav li:not(:first-child) {
+		display: none;
+	}
+	#hamburger {
+		display: block;
+
+	}
+}
 
 
 
@@ -202,18 +215,14 @@ header img {
 	position: fixed;
 }
 
-
 .dropdown-line {
 	display: flex;
 }
-
-
 	
 .show {
 	display: block;
 }
 	
-
 .menu-arrow {
 	width: 15px;
 	height: 8px;
@@ -228,7 +237,6 @@ header img {
 	-webkit-transform: rotate(90deg);
 	-moz-transform: rotate(90deg);
 }
-
 
 .menu-layer1 {
 	font-weight: 500;
