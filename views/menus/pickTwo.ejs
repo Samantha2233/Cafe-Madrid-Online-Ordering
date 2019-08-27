@@ -10,10 +10,6 @@
         <% dishes.forEach(function(dish){ %>
         <% if(dish.category === 'Soup'){ %>
             <div class="menu-item">
-                    <div>
-                        <img class="add" src="../../images/plus-burgundy.png" alt="add menu item to cart">
-                    </div>
-
                     <h3> <%= dish.name %> </h3>
                     <p class="description"> <%= dish.description %> </p>
                     
@@ -38,9 +34,6 @@
             <% dishes.forEach(function(dish){ %>
             <% if(dish.category === 'Salad'){ %>
                 <div class="menu-item">
-                        <div>
-                            <img class="add" src="../../images/plus-burgundy.png" alt="add menu item to cart">
-                        </div>
 
                         <h3> <%= dish.name %> </h3>
                         <p class="description"> <%= dish.description %> </p>
@@ -68,9 +61,6 @@
             <% dishes.forEach(function(dish){ %>
                 <% if(dish.category === 'Sandwich'){ %>
                     <div class="menu-item">
-                            <div>
-                                <img class="add" src="../../images/plus-burgundy.png" alt="add menu item to cart">
-                            </div>
     
                             <h3> <%= dish.name %> </h3>
                             <p class="description"> <%= dish.description %> </p>
