@@ -13,6 +13,13 @@ const customerSchema = new mongoose.Schema ({
         type: String,
         required: true
     },
+    picture: {
+        type: String,
+        required: true
+    },
+    email: {
+        type: String
+    },
     phone: {
         type: Number,
         match: /^\d{3}-\d{3}-\d{4}$/

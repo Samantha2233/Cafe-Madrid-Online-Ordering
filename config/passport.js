@@ -24,10 +24,11 @@ passport.use(new GoogleStrategy({
                 var newCustomer = new Customer({
                     name: profile.displayName,
                     email: profile.emails[0].value,
-                    googleId: profile.id
+                    googleId: profile.id,
+                    picture: profile.photos[0].value
                 });
                 newCustomer.save(function(err){
-                    console.log(newCustomer)
+                    console.log("NEW CUSTOMER//////////////////", newCustomer)
                     return cb(null, newCustomer);
                 });
             }

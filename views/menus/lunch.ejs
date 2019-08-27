@@ -17,27 +17,39 @@
 
         <div class="menu-section" id="pick-two-special">
             <h2>Pick Two Special</h2>
-            <p>Pick and two of the listed items - $12</p>
-            <p>Cup of Soup</p>
-            <p>Gaudi Side Salad</p>
-            <p>Sandwich on Bacci Roll or Half Ciabatta Roll</p>
-            <p>Full Sandwich available for $15</p>
+            <p id="pick-two-price">$12</p>
+            <div id="pick-two">
+                <p>Soup</p>
+                <p>Salad</p>
+                <p>Sandwich</p>
+            </div>
+            <a href="/pickTwo">Pick Two</a>
         </div>
 
         <div class="menu-section" id="soups">
             <h2>Sopas : Soups</h2>
              <% dishes.forEach(function(dish){ %>
-                <div class="menu-item">
-                        <h3> <%= dish.name %> </h3>
-                        <p> <%= dish.description %> </p>
-                       
-                    
-
-
-                        <div class="add-on">
+                <% if(dish.category === 'Soup'){ %>
+                    <div class="menu-item">
+                            <div>
+                                <img class="add" src="../../images/plus-burgundy.png" alt="add menu item to cart">
+                            </div>
+    
+                            <h3> <%= dish.name %> </h3>
+                            <p class="description"> <%= dish.description %> </p>
                             
+                            <% dish.amountAndPrice.forEach(function(aAndP){ %>
+                                <form action="">
+                                    <button class="dish-select"><%= aAndP.amount %>: $<%= aAndP.price %></button>
+                                </form>
+                            <% }) %>
+                            <% dish.addOns.forEach(function(addOn){ %>
+                                <form action="">
+                                    <button class="dish-select add-on"><%= addOn.addOn %> +$<%= addOn.price %></button>
+                                </form>
+                            <% }) %>
                         </div>
-                    </div>
+                   <% } %>
             <% }) %>
 
 
@@ -47,54 +59,59 @@
         <div class="menu-section" id="salads">
             
             <h2>Ensalades : Salads</h2>
-            <div class="menu-item">
-                <h3>Mixta Salad</h3>
-                <p>Organic Mixed Greens garnished with Piquillo Peppers, Red Onions, Tomatoes, Green Olives, Grilled Asparagus, Extra Virgin Olive Oil and Balsamic Vinegar.</p>
-                <p class="price">$11</p>
-                <div class="portion">
-                    <p class="price">Half Order: $10.50</p>
-                    <p class="price">Full Order: $12.50</p>
-                </div>
-                <div class="add-on">
-                    <p class="description">+ Grilled Chicken</p>
-                    <p class="price">+$4</p>
-                    <p class="description">+ Grilled Shrimp</p>
-                    <p class="price">+$5</p>
-                    <p class="description">+ Grilled Salmon</p>
-                    <p class="price">+$6</p>
-                </div>
-            </div>
-            
-            <div class="menu-item">
-                <h3>Mediterranean Salad</h3>
-                <p>Organic Mixed Greens, Strawberries, Apples, Mandarin Oranges, Raisins, Walnuts, Breaded Fried Brie, and Raspberry Vinaigrette.</p>
-                <p class="price">$11</p>
-                <div class="portion">
-                    <p class="price">Half Order: $11.50</p>
-                    <p class="price">Full Order: $13.50</p>
-                </div>
-            </div>
+             <% dishes.forEach(function(dish){ %>
+                <% if(dish.category === 'Salad'){ %>
+                    <div class="menu-item">
+                            <div>
+                                <img class="add" src="../../images/plus-burgundy.png" alt="add menu item to cart">
+                            </div>
+    
+                            <h3> <%= dish.name %> </h3>
+                            <p class="description"> <%= dish.description %> </p>
+                            
+    
+                            <% dish.addOns.forEach(function(addOn){ %>
+                                <form action="">
+                                    <button class="dish-select"><%= addOn.addOn %></button>
+                                </form>
+                            <% }) %>
+                            <% dish.amountAndPrice.forEach(function(aAndP){ %>
+                                <form action="">
+                                    <button class="dish-select"><%= aAndP.amount %>: $<%= aAndP.price %></button>
+                                </form>
+                            <% }) %>
+    
+                        </div>
+                   <% } %>
+            <% }) %>
+
         </div>
         
         <div class="menu-section" id="sandwiches">
-            <h2>Sandwiches</h2>
-            <div class="menu-item">
-                <h3>Beef Tenderloin Sandwich</h3>
-                <p>Beef Tenderloin with our famous Creamy Roquefort Cheese Sauce, Caramelized Onions, Balsamic Vinaigrette Reduction, Lettuce and Strawberry Fig Jam.</p>
-                <div class="portion">
-                    <p class="price">Bacci Roll: $10</p>
-                    <p class="price">Ciabatta: $13.50</p>
-                </div>
-            </div>
-            
-            <div class="menu-item">
-                <h3>Mediterranean Sandwich</h3>
-                <p>Marinated Chicken Breast with melted Swiss, Pesto spread, Mustard Dressing and Baby Greens.</p>
-                <div class="portion">
-                    <p class="price">Bacci Roll: $8</p>
-                    <p class="price">Ciabatta: $12</p>
-                </div>
-            </div>
+                <h2>Sandwiches</h2>
+                <% dishes.forEach(function(dish){ %>
+                   <% if(dish.category === 'Sandwich'){ %>
+                       <div class="menu-item">
+                               <div>
+                                   <img class="add" src="../../images/plus-burgundy.png" alt="add menu item to cart">
+                               </div>
+       
+                               <h3> <%= dish.name %> </h3>
+                               <p class="description"> <%= dish.description %> </p>
+       
+                               <% dish.addOns.forEach(function(addOn){ %>
+                                    <form action="">
+                                        <button class="dish-select"><%= addOn.addOn %>: +$<%= addOn.price %></button>
+                                    </form>
+                                <% }) %>
+                                <% dish.amountAndPrice.forEach(function(aAndP){ %>
+                                    <form action="">
+                                        <button class="dish-select"><%= aAndP.amount %>: $<%= aAndP.price %></button>
+                                    </form>
+                                <% }) %>
+                           </div>
+                      <% } %>
+               <% }) %>
         </div>
         
         
@@ -123,34 +140,41 @@
                 <div class="">
                     
                     <table id="take-out-list">
-                        <thead>My order</thead>
                         <tbody>
                             <tr>
-                                <th colspan="2">Item</th>
-                                <th colspan="1">Amount</th>
-                                <th colspan="1">Price</th>
+                                <td colspan="1" class="amount">1</td>
+                                <td colspan="3" class="dish">Chicken Soup</td>
+                                <td colspan="2" class="price"></td>
                             </tr>
-                            
                             <tr>
-                                <td colspan="2">Item Eg.</td>
-                                <td colspan="1">Amount Eg.</td>
-                                <td colspan="1">$ Eg.</td>
+                                <td colspan="1" class="amount">1</td>
+                                <td colspan="3" class="dish">Breakfast Riser Sandwich</td>
+                                <td colspan="2" class="price"></td>
                             </tr>
                             
                             <tr>
                                 <td colspan="2"></td>
                                 <td colspan="1"></td>
-                                <td colspan="1">Totaled Price</td>
+                                <td colspan="2" id="subtotal"><span class="grey">subtotal:</span>  $12</td>
+                            </tr>
+                        
+                            <tr>
+                                <td colspan="2"></td>
+                                <td colspan="1"></td>
+                                <td colspan="2" id="tax"><span class="grey">Tax(8.35%): </span> $1</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"></td>
+                                <td colspan="1"></td>
+                                <td colspan="2" id="total"><span class="grey">Total:</span>  $13</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
                 <button type="submit">Order Now</button>
             </div>
-            <p>Inquire About Catering</p>
         </div>
     </div>
-
 </div>
 
 

@@ -1,6 +1,7 @@
 require('dotenv').config();
 require('./config/database');
 const Dish = require('./models/dish');
+const Customer = require('./models/customer');
 const data = require('./data');
 
 

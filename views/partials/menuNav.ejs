@@ -1,15 +1,12 @@
-<div class="menu-nav">
+<div id="menu-nav">
 			
     <ul>
         <div class="dropdown-line">
-            <li class="menu-layer1">Lunch</li>
+            <li class="menu-layer1" id="lunch">Lunch</li>
             <img class="menu-arrow" src="images/triangle-arrow-burgundy.png" alt="drop down arrow">
         </div>
-            
-
-       
-
-            <ul class="dropdown-content">
+        <div class="lunch dropdown">
+            <ul>
                 <li><a href="#tapas">Tapas</a></li>
                 <li><a href="#soups">Soups</a></li>
                 <li><a href="#salads">Salads</a></li>
@@ -22,57 +19,50 @@
                 <li><a href="#coffee">Coffee, Wine & Liqueur</a></li>
                 <li><a href="#desserts">Desserts</a></li>
             </ul>
-        <div class="dropdown-line">
-            <li class="menu-layer1">Dinner Menu</li>
-            <img class="menu-arrow" src="images/triangle-arrow-burgundy.png" alt="drop down arrow">
         </div>
         <div class="dropdown-line">
-            <li class="menu-layer1">Catering Menu</li>
+            <li class="menu-layer1" id="dinner">Dinner Menu</li>
             <img class="menu-arrow" src="images/triangle-arrow-burgundy.png" alt="drop down arrow">
         </div>
+        <ul class="dinner dropdown">
+            <li><a href="#">Tapas</a></li>
+            <li><a href="#">Soups</a></li>
+            <li><a href="#">Salads</a></li>
+            <li><a href="#">Paella</a></li>
+            <li><a href="#">Entrees</a></li>
+            <li><a href="#">Sides</a></li>
+            <li><a href="#">Drinks</a></li>
+            <li><a href="#">Coffee, Wine & Liqueur</a></li>
+            <li><a href="#">Desserts</a></li>
+            </ul>
+        <div class="dropdown-line">
+            <li class="menu-layer1" id="catering">Catering Menu</li>
+            <img class="menu-arrow" src="images/triangle-arrow-burgundy.png" alt="drop down arrow">
+        </div>
+        <ul class="catering dropdown">
+            <li><a href="#">Lunch Catering</a></li>
+            <li><a href="#">Dinner Catering</a></li>
+        </ul>
+
     </ul>
 </div>
 
 
 <script>
-
-    //event delegation
-    let selected;
-
-    let dropdown = document.querySelectorAll('.dropdown-line');
-    
-    console.log(dropdown);
-    dropdown.addEventListener('click', toggleMenus);
-    
-    
+    let menuNav = document.querySelector('#menu-nav ul');
+   
     function toggleMenus(event) {
+        console.log('this', this);
         let target = event.target;
-        console.log(target);
-        console.log('CLICKED!');
+        console.log('target', target);
+
+        let clicked = target.classList.contains("dropdown-line") ? target : target.parentElement;
+        console.log('clicked =', clicked);
+        
+        let next = clicked.nextSibling.nextSibling;
+        console.log('next =', next);
+        next.classList.toggle('show');
     };
     
-
-    //     var dropdownContent = document.querySelectorAll("drowdown-content"); 
-    //     dropdownContent.classList.toggle("show");
-
-
-
-
-// let selectedTd;
-
-// table.onclick = function(event) {
-//   let target = event.target; 
-
-//   if (target.tagName != 'TD') return; 
-
-//   highlight(target); 
-// };
-
-// function highlight(td) {
-//   if (selectedTd) { 
-//     selectedTd.classList.remove('highlight');
-//   }
-//   selectedTd = td;
-//   selectedTd.classList.add('highlight'); 
-// }
+    menuNav.addEventListener('click', toggleMenus);
 </script>
