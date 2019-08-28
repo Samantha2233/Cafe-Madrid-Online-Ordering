@@ -2,7 +2,11 @@ const express = require('express');
 const router = express.Router();
 var ordersCtrl = require('../controllers/orders');
 
-router.post('/add-dish/:id', ordersCtrl.addDish);
+router.post('/add-dish/:id', isLoggedIn, ordersCtrl.addDish);
 
+function isLoggedIn(req, res, next){
+    if (req.isAuthenticated()) return next();
+    res.redirect('/auth/google');
+}
 
 module.exports = router;

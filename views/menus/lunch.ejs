@@ -31,32 +31,32 @@
              <% dishes.forEach(function(dish){ %>
                 <% if(dish.category === 'Tapas'){ %>
                     <div class="menu-item">
-                            <form action="/orders/add-dish/<%= dish._id %>" method="POST">
-                                <button type="submit" class="add-button">
-                                        <img src="../../images/plus-burgundy.png" class="add">
-                                </button>
-                            </form>
-    
-                            <h3> <%= dish.name %> </h3>
-                            <p class="description"> <%= dish.description %> </p>
-                            
-                            <% dish.amountAndPrice.forEach(function(aAndP){ %>
-                                <% if(aAndP.amount === ''){ %>
-                                    <p>$<%= aAndP.price %></p>
-                                <% } else { %>
-                                    <form action="">
-                                        <button class="dish-select"><%= aAndP.amount %>: $<%= aAndP.price %></button>
-                                    </form>
-                                <% } %>
-                                
-                            <% }) %>
-                            <% dish.addOns.forEach(function(addOn){ %>
+                        <form action="/orders/add-dish/<%= dish._id %>" method="POST">
+                            <button type="submit" class="add-button">
+                                    <img src="../../images/plus-burgundy.png" class="add">
+                            </button>
+                        </form>
+
+                        <h3> <%= dish.name %> </h3>
+                        <p class="description"> <%= dish.description %> </p>
+                        
+                        <% dish.amountAndPrice.forEach(function(aAndP){ %>
+                            <% if(aAndP.amount === ''){ %>
+                                <p>$<%= aAndP.price %></p>
+                            <% } else { %>
                                 <form action="">
-                                    <button class="dish-select add-on"><%= addOn.addOn %> +$<%= addOn.price %></button>
+                                    <button class="dish-select"><%= aAndP.amount %>: $<%= aAndP.price %></button>
                                 </form>
-                            <% }) %>
-                        </div>
-                   <% } %>
+                            <% } %>
+                            
+                        <% }) %>
+                        <% dish.addOns.forEach(function(addOn){ %>
+                            <form action="">
+                                <button class="dish-select add-on"><%= addOn.addOn %> +$<%= addOn.price %></button>
+                            </form>
+                        <% }) %>
+                    </div>
+                <% } %>
             <% }) %>
         </div>
         <div class="menu-section" id="soups">
@@ -146,6 +146,40 @@
                             <% }) %>
                         </div>
                     <% } %>
+            <% }) %>
+        </div>
+
+        <div class="menu-section" id="specialties">
+                <h2>House Specialties</h2>
+                <% dishes.forEach(function(dish){ %>
+                   <% if(dish.category === 'Specialties'){ %>
+                    <div class="menu-item">
+                        <form action="/orders/add-dish/<%= dish._id %>" method="POST">
+                            <button type="submit" class="add-button">
+                                    <img src="../../images/plus-burgundy.png" class="add">
+                            </button>
+                        </form>
+
+                        <h3> <%= dish.name %> </h3>
+                        <p class="description"> <%= dish.description %> </p>
+                        
+                        <% dish.amountAndPrice.forEach(function(aAndP){ %>
+                            <% if(aAndP.amount === ''){ %>
+                                <p>$<%= aAndP.price %></p>
+                            <% } else { %>
+                                <form action="">
+                                    <button class="dish-select"><%= aAndP.amount %>: $<%= aAndP.price %></button>
+                                </form>
+                            <% } %>
+                            
+                        <% }) %>
+                        <% dish.addOns.forEach(function(addOn){ %>
+                            <form action="">
+                                <button class="dish-select add-on"><%= addOn.addOn %> +$<%= addOn.price %></button>
+                            </form>
+                        <% }) %>
+                    </div>
+                <% } %>
             <% }) %>
         </div>
 

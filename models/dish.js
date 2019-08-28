@@ -30,7 +30,7 @@ const dishSchema = new mongoose.Schema ({
     addOns: [addOnSchema],
     category: {
         type: String,
-        enum: ['Soup', 'Salad', 'Sandwich', 'Tapas'],
+        enum: ['Soup', 'Salad', 'Sandwich', 'Tapas', 'Specialties'],
     }
 }, {
     timestamps: true

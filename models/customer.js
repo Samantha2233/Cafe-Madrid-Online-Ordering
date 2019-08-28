@@ -23,13 +23,7 @@ const customerSchema = new mongoose.Schema ({
     phone: {
         type: Number,
         match: /^\d{3}-\d{3}-\d{4}$/
-    },
-    orders: [{
-        orderIds: {
-            type: mongoose.Schema.ObjectId,
-            ref: 'Order'
-        }
-    }]
+    }
 }, {
     timestamps: true
 })

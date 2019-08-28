@@ -234,4 +234,108 @@ exports.dishes = [
         amountAndPrice:[{amount:'', price:'13.00'}],
         category:'Tapas'
     },
+     /////////   L U N C H   S P E C I A L T I E S   //////////
+     {
+        name: 'Seafood Paella Platter', 
+        description:'Spanish Saffron Rice with Clams, Mussels, Shrimp, Calamari, & White Fish; Two Stuffed Piquillo Peppers, and a Slice of Spanish Tortilla in Garlic Aioli', 
+        amountAndPrice:[{amount:'', price:'17.00'}],
+        category:'Specialties'
+    },
+     {
+        name: 'Seafood Paella Plate', 
+        description:'Spanish Saffron Rice with Clams, Mussels, Shrimp, Calamari, & White Fish', 
+        amountAndPrice:[{amount:'', price:'15.00'}],
+        category:'Specialties'
+    },
+    {
+        name: 'Meat Lasagna al Gratin', 
+        description:'Six layers of Lasagna Pasta with Ground Veal, Beef, and Pork; Mozzarella, Pecorino, and Parmesan Cheese Béchamel and Piquillo Sauce', 
+        amountAndPrice:[{amount:'', price:'15.00'}],
+        category:'Specialties'
+    },
+    {
+        name: 'Vegetable Lasagna', 
+        description:'Six layers of Lasagna Pasta with Mushrooms, Spinach, Ricotta, Provolone, Mozzarella, Pecorino, and Parmesan Béchamel and Piquillo Sauce', 
+        amountAndPrice:[{amount:'', price:'15.00'}],
+        category:'Specialties'
+    },
+    {
+        name: 'Tostada de Cameron y Cangrejo', 
+        description:'Shrimp and Crab Ceviche tostadas with Avocado, Lime Juice and Hot Sauce', 
+        amountAndPrice:[{amount:'', price:'16.00'}],
+        category:'Specialties'
+    },
+    {
+        name: 'Carbonara Pasta', 
+        description:'Spaghetti tossed in a Cream Sauce with Bacon, Corn, Grilled Chicken, and Parmesan ', 
+        amountAndPrice:[{amount:'', price:'16.00'}],
+        category:'Specialties'
+    },
+    {
+        name: 'South American Platter', 
+        description:'Spanish Marinated Shredded Beef, Chicken Potato Salad, Rice with Pine Nuts & Raisins, Fried Egg topped with Aioli & House Mustard Dressing; + Two Tequeños', 
+        amountAndPrice:[{amount:'', price:'15.00'}],
+        category:'Specialties'
+    },
+    {
+        name: 'Pollo con Pesto Tomate y Esparragos', 
+        description:'Grilled Chicken Breast, Pesto, Mozzarella, Asparagus, Tomatoes, served in a Balsamic Reduction with Baby Red Potatoes', 
+        amountAndPrice:[{amount:'', price:'18.00'}],
+        category:'Specialties'
+    },
+    {
+        name: 'Cerdo en Salsa de Manzana y Frambuesa', 
+        description:'Grilled Pork Tenderloin in an Apple and Raspberry Sauce; Served with Mashed Potatoes', 
+        amountAndPrice:[{amount:'', price:'22.00'}],
+        category:'Specialties'
+    },
+    {
+        name: 'Bacaloa en Salsa de Pixto', 
+        description:'Pacific Cod in our famous Spanish Pixto sauce -Sautéed vegetables, in a garlic, and tomato sauce - Served over Mashed Potatoes', 
+        amountAndPrice:[{amount:'', price:'23.00'}],
+        category:'Specialties'
+    },
+
+     /////////   D R I N K S   //////////
+    {
+        name: 'Pellegrino (750ML)',  
+        amountAndPrice:[{amount:'', price:'6.00'}],
+        category:'Drinks'
+    },
+    {
+        name: 'Panna Bottled Water (1L)',  
+        amountAndPrice:[{amount:'', price:'7.00'}],
+        category:'Drinks'
+    },
+    {
+        name: 'Lemonade',  
+        amountAndPrice:[{amount:'', price:'2.79'}],
+        category:'Drinks'
+    },
+    {
+        name: 'Flavored Lemonade',  
+        amountAndPrice:[{amount:'', price:'3.29'}],
+        category:'Drinks'
+    },
+    {
+        name: 'Iced Tea',  
+        amountAndPrice:[{amount:'', price:'2.79'}],
+        category:'Drinks'
+    },
+    {
+        name: 'Juice',  
+        amountAndPrice:[{amount:'', price:'2.89'}],
+        category:'Drinks'
+    },
+    {
+        name: 'Coke Products',  
+        amountAndPrice:[{amount:'', price:'2.79'}],
+        category:'Drinks'
+    },
+    /////////   B E E R   //////////
+    {
+        name: 'Pilsner Urquell (Czech Republic',  
+        amountAndPrice:[{amount:'', price:'2.79'}],
+        category:'Drinks'
+    },
 ];
