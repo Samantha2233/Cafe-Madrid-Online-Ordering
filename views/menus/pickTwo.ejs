@@ -11,7 +11,11 @@
             <% dishes.forEach(function(dish){ %>
                 <% if(dish.category === 'Soup'){ %>
                     <div class="menu-item">
-                        <img src="../../images/plus-burgundy.png" class="add">
+                        <form action="/orders/add-dish/<%= dish._id %>" method="POST">
+                            <button type="submit" class="add-button">
+                                    <img src="../../images/plus-burgundy.png" class="add">
+                            </button>
+                        </form>
                         <h3> <%= dish.name %> </h3>
                         <p class="description"> <%= dish.description %> </p>
                         
@@ -36,7 +40,11 @@
                 <% dishes.forEach(function(dish){ %>
                     <% if(dish.category === 'Salad'){ %>
                         <div class="menu-item">
-                            <img src="../../images/plus-burgundy.png" class="add">
+                            <form action="/orders/add-dish/<%= dish._id %>" method="POST">
+                                <button type="submit" class="add-button">
+                                        <img src="../../images/plus-burgundy.png" class="add">
+                                </button>
+                            </form>
                             <h3> <%= dish.name %> </h3>
                             <p class="description"> <%= dish.description %> </p>
                             
@@ -64,7 +72,11 @@
             <% dishes.forEach(function(dish){ %>
                 <% if(dish.category === 'Sandwich'){ %>
                     <div class="menu-item">
-                        <img src="../../images/plus-burgundy.png" class="add">
+                        <form action="/orders/add-dish/<%= dish._id %>" method="POST">
+                            <button type="submit" class="add-button">
+                                    <img src="../../images/plus-burgundy.png" class="add">
+                            </button>
+                        </form>
                         <h3> <%= dish.name %> </h3>
                         <p class="description"> <%= dish.description %> </p>
 
@@ -83,7 +95,7 @@
             <% }) %>
     </div>
     
-    <%- include('../partials/check') %>
+    <%- include('../partials/order') %>
     
 </div>
 

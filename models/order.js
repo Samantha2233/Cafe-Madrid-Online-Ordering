@@ -1,11 +1,10 @@
 var mongoose = require('mongoose');
 
 const lineItemsSchema = new mongoose.Schema ([{
-    dish: {
-        dishId: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'Dish'
-        }
+    dish: 
+    {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Dish'
     },
     quanitity: {
         type: Number,

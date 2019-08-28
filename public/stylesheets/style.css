@@ -403,13 +403,25 @@ header img {
 
 .add {
 	width: 20px;
-	position: absolute;
-	top: 25px;
-	right: 25px;
+	
 }
 
 .add:hover {
 	background-image: url(../images/plus-green.png);
+}
+
+.add-button {
+	margin: 0;
+	position: absolute;
+	top: 25px;
+	right: 25px;
+	width: 25px;
+	padding: 0;
+	border: 0;
+}
+
+.add-button:hover {
+	border: 0;
 }
 
 .menu-item form {

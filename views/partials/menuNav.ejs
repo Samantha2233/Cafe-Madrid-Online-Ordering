@@ -43,32 +43,5 @@
             <li><a href="#">Lunch Catering</a></li>
             <li><a href="#">Dinner Catering</a></li>
         </ul>
-
     </ul>
 </div>
-
-
-<script>
-    let menuNav = document.querySelector('#menu-nav ul');
-   
-    function toggleMenus(event) {
-        console.log('this', this);
-        let target = event.target;
-        console.log('target', target);
-
-        let clicked = target.classList.contains("dropdown-line") ? target : target.parentElement;
-        console.log('clicked =', clicked);
-        
-        let next = clicked.nextSibling.nextSibling;
-        console.log('next =', next);
-        next.classList.toggle('show');
-
-
-        let arrow = clicked.lastChild.previousSibling;
-        console.log('arrow =', arrow);
-
-        arrow.classList.toggle('dropped-arrow');
-    };
-    
-    menuNav.addEventListener('click', toggleMenus);
-</script>
