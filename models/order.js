@@ -1,16 +1,23 @@
 var mongoose = require('mongoose');
 
-const lineItemsSchema = new mongoose.Schema ({
+const lineItemsSchema = new mongoose.Schema ([{
     dish: {
-        type: String
+        dishId: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Dish'
+        }
     },
     quanitity: {
         type: Number,
         default: 1
     }
-})
+}])
 
 const orderSchema = new mongoose.Schema ({
+    customer: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Customer'
+    },
     lineItems: [lineItemsSchema],
     totalPrice: {
         type: Number

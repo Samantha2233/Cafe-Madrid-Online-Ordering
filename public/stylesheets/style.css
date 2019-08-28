@@ -77,7 +77,7 @@ button:active {
 
 button:hover {
 	color: var(--burgundy);
-	border: 2px solid var(--burgundy);
+	border: 1px solid var(--orange);
 }
 
 button:focus {
@@ -285,9 +285,10 @@ header img {
 }
 
 .dropped-arrow {
-	transform: rotate(180deg);
-	-webkit-transform: rotate(90deg);
-	-moz-transform: rotate(90deg);
+	transform: rotate(362deg);
+	top: 21px;
+	/* -webkit-transform: rotate(90deg);
+	-moz-transform: rotate(90deg); */
 }
 
 .menu-layer1 {
@@ -503,7 +504,14 @@ tbody {
 	top: 110px;
 }
 
+.pick-two-h1 {
+	font-size: 40px;
+}
 
+.pick-two-h2 {
+	font-family: 'Quicksand', sans-serif;
+	font-size: 20px;	
+}
 
 .pick-two-display {
 	display: grid;
@@ -515,23 +523,15 @@ tbody {
 	padding: 20px
 }
 
-.pick-two-h1 {
-	font-size: 40px;
-}
-
-.pick-two-h2 {
-	font-family: 'Quicksand', sans-serif;
-	font-size: 20px;	
-}
-
-.soup-section {
+#soups-and-salads {
 	grid-column: 1;
 }
 
-.salad-section {
-	grid-column: 1;
-}
+/* .salad-section {
+	grid-column: 2;
+} */
 
 .sandwich-section {
 	grid-column: 2;
+	grid-row-start: 1;
 }

@@ -2,7 +2,9 @@ var Dish = require('../models/dish');
 
 
 module.exports = {
-    index
+    index,
+    create,
+    
 }
 
 
@@ -17,5 +19,14 @@ function index(req, res) {
         });
     });
 }
+
+function create(req, res){
+    const dish = new Dish(req.body);
+    dish.save(function(err){
+        if(err) console.log(err);
+        res.render('menus/lunch');
+    });
+}
+
 
 

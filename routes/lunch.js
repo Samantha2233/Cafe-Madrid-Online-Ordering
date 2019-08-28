@@ -14,5 +14,6 @@ var dishCtrl = require('../controllers/dish');
 router.get('/lunch', dishCtrl.index);
 // router.post('/lunch', dishCtrl.create);
 
+router.post('/lunch', dishCtrl.create);
 
 module.exports = router;

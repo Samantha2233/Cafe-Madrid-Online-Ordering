@@ -24,10 +24,12 @@ const customerSchema = new mongoose.Schema ({
         type: Number,
         match: /^\d{3}-\d{3}-\d{4}$/
     },
-    orders : {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Customer'
-    }
+    orders: [{
+        orderIds: {
+            type: mongoose.Schema.ObjectId,
+            ref: 'Order'
+        }
+    }]
 }, {
     timestamps: true
 })

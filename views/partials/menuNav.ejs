@@ -62,6 +62,12 @@
         let next = clicked.nextSibling.nextSibling;
         console.log('next =', next);
         next.classList.toggle('show');
+
+
+        let arrow = clicked.lastChild.previousSibling;
+        console.log('arrow =', arrow);
+
+        arrow.classList.toggle('dropped-arrow');
     };
     
     menuNav.addEventListener('click', toggleMenus);
