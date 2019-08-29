@@ -11,8 +11,8 @@ module.exports = {
 function index(req, res) {
     Dish.find({}, function(err, dishes){
         res.render('menus/lunch', {
+            userDishes: null,
             dishes,
-            // addOns,
             customer: req.user,
             title: 'Lunch | Cafe Madrid',
             pageH1: 'Lunch Menu'

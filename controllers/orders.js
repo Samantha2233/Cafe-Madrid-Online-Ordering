@@ -1,6 +1,7 @@
 var Dish = require('../models/dish');
 var Order = require('../models/order');
 var Customer = require('../models/customer');
+var mongoose = require('mongoose');
 
 module.exports = {
     addDish,
@@ -28,9 +29,40 @@ function addDish(req, res) {
 
 function showOrder(req, res){
     console.log('SHOW ORDER FUNCTION CALLED');
+    let dishRefs = [];
 
-    Order.lineItems.findById(req.params.id, function(err, order){
-        console.log('showOrder order', order);
-        res.render('/order');
+    let dishes;
+    let userDishes;
+
+    Order.find({customer: req.user._id})
+    .then(order => {
+        order[0].lineItems.forEach(function(lineItem){
+            dishRefs.push(new mongoose.Types.ObjectId(lineItem.dish));
+        })
     })
+    .then(o => {
+        Dish.find({ '_id': {
+            $in: dishRefs
+        } })
+        .then(foundDishes => {
+            userDishes = foundDishes;
+        })
+        .then(e => {
+           Dish.find({}, function(err, allDishes){
+               dishes = allDishes;
+               res.render('menus/lunch', {
+                   dishes,
+                   userDishes,
+                   customer: req.user,
+                   title: 'Lunch | Cafe Madrid',
+                    pageH1: 'Lunch Menu'
+               })
+           })
+        })
+    })
+
+    // Order.lineItems.findById(req.params.id, function(err, order){
+    //     console.log('showOrder order', order);
+    //     res.render('/order');
+    // })
 }

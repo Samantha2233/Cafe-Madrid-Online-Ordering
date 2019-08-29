@@ -3,7 +3,7 @@ const router = express.Router();
 var ordersCtrl = require('../controllers/orders');
 
 router.post('/add-dish/:id', isLoggedIn, ordersCtrl.addDish);
-router.get('/orders/:id', isLoggedIn, ordersCtrl.showOrder);
+router.get('/:id', isLoggedIn, ordersCtrl.showOrder);
 
 
 function isLoggedIn(req, res, next){
