@@ -1,8 +1,11 @@
 :root {
 	--burgundy: #7f170e;
 	--secondary: hsla(31, 64%, 90%, 1);
+	--secondary3: #fce1c4;
+	--secondary2: rgb(252, 243, 233);
 	--pink: hsla(0, 64%, 82%, 0.21);
 	--green: #8da54a;
+	--lightgreen: #c1e65d;
 	--orange: #e1772e;
 	--offwhite:
 }
@@ -89,7 +92,8 @@ button:focus {
 
 
 hr {
-	border-color: var(--orange);
+	border-color: var(--lightgreen);
+	/* border: 2px solid var(--lightgreen); */
 }
 
 
@@ -121,13 +125,17 @@ hr {
 
 .nav {
 	display: flex;
-	background-color: white;
+	background-color: transparent;
 	position: fixed;
 	top: 30px;
 	margin: 0;
 	width: 100%;
 	z-index: 10;
 	justify-content: space-between;
+}
+
+.nav-li {
+	display: none;
 }
 
 .nav li {
@@ -384,10 +392,11 @@ header img {
 
 
 .menu-item {
-	background-color: var(--secondary);
+	background-color: var(--secondary2);
 	padding: 20px;
 	margin: 20px 0 10px 0;
 	position: relative;
+	border: 1px var(--secondary) solid;
 }
 
 .description {
