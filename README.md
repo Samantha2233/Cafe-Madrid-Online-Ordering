@@ -1,4 +1,5 @@
 <img src="public/images/cafe-madrid-logo.png" alt="Cafe Madrid Logo" width="300px">
+<img src="public/images/home-screenshot.jpg" alt="Lunch Page">
 
 
 ### Online Ordering App
