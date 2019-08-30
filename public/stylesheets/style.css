@@ -85,20 +85,13 @@ button:hover {
 
 button:focus {
 	color: var(--secondary);
-	background-color: var(--burgundy);
-
+	background-color: white;
 }
-
-
 
 hr {
 	border-color: var(--lightgreen);
 	/* border: 2px solid var(--lightgreen); */
 }
-
-
-
-
 
 .small-text {
 	text-align: center;
@@ -340,8 +333,30 @@ header img {
 	display: block;
 }
 
-	
+#new-dish-h1 {
+	margin-top: 100px;
+}
 
+#add-menu-item {
+	position: absolute;
+	bottom: 10px;
+	left: 10px;
+}
+
+#add-menu-item-form {
+	background-color: var(--secondary2);
+	border:2px solid var(--secondary3);
+	margin: 0 auto;
+	width: 450px;
+	padding: 60px;
+}
+
+#add-menu-item-form div {
+	padding: 10px;
+	width: 200px;
+	display: block;
+	margin: 0 auto;
+}
 
 
 

@@ -4,7 +4,7 @@ var Dish = require('../models/dish');
 module.exports = {
     index,
     create,
-    
+    formForNewDish
 }
 
 
@@ -21,7 +21,13 @@ function index(req, res) {
 }
 
 function create(req, res){
+    //handle empty feilds
+    for(let key in req.body){
+        if(req.body[key]==='') delete req.body[key];
+    }
+    //instantiate new dish
     const dish = new Dish(req.body);
+    // save new dish
     dish.save(function(err){
         if(err) console.log(err);
         res.render('menus/lunch');
@@ -29,4 +35,9 @@ function create(req, res){
 }
 
 
-
+function formForNewDish(req, res) {
+    res.render('menus/add-menu-item', {
+        customer: req.user,
+        title: 'Add a New Dish'
+    });
+}
