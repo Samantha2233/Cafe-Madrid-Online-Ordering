@@ -6,6 +6,6 @@ router.get('/lunch', dishCtrl.index);
 
 router.get('/add-menu-item', dishCtrl.formForNewDish);
 
-router.post('/', dishCtrl.create);
+router.post('/dishes', dishCtrl.create);
 
 module.exports = router;

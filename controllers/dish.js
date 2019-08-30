@@ -7,7 +7,6 @@ module.exports = {
     formForNewDish
 }
 
-
 function index(req, res) {
     Dish.find({}, function(err, dishes){
         res.render('menus/lunch', {
@@ -27,10 +26,18 @@ function create(req, res){
     }
     //instantiate new dish
     const dish = new Dish(req.body);
+    //find all dishes to render
+    Dish.find({});
     // save new dish
     dish.save(function(err){
         if(err) console.log(err);
-        res.render('menus/lunch');
+        res.render('menus/lunch', {
+            userDishes: [],
+            dishes,
+            customer: req.user,
+            title: 'Lunch | Cafe Madrid',
+            pageH1: 'Lunch Menu'
+        });
     });
 }
 
