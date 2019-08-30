@@ -33,13 +33,8 @@ function create(req, res){
     // save new dish
     dish.save(function(err){
         if(err) console.log(err);
-        res.render('menus/lunch', {
-            userDishes: [],
-            dishes,
-            customer: req.user,
-            title: 'Lunch | Cafe Madrid',
-            pageH1: 'Lunch Menu'
-        });
+        console.log('WE"VE GOTTEN TO THIS POINT');
+        res.redirect('/lunch');
     });
 }
 

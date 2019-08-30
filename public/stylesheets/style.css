@@ -89,7 +89,7 @@ button:focus {
 }
 
 hr {
-	border-color: var(--lightgreen);
+	border-color: var(--orange);
 	/* border: 2px solid var(--lightgreen); */
 }
 
@@ -599,4 +599,9 @@ tbody {
 .sandwich-section {
 	grid-column: 2;
 	grid-row-start: 1;
+}
+
+footer {
+	position: absolute;
+	bottom: 0;
 }
