@@ -15,12 +15,8 @@ function addDish(req, res) {
         customer: req.user._id, 
         paid: false
     }, function (err, activeOrder) {
-        console.log('////////////////', req.params.id);
         if (!activeOrder) activeOrder = new Order({customer: req.user._id});
         activeOrder.lineItems.push({ dish: req.params.id });
-        console.log('AFTER PUSHHH', req.params.id);
-
-        console.log('ACTIVE ORDER\'S LINE ITEMS', activeOrder.lineItems);
         // save the activeOrder containing the lineItem (dish)
         activeOrder.save(function (err) {
             res.redirect('/lunch');
@@ -46,7 +42,6 @@ function showOrder(req, res){
         } })
         .then(foundDishes => {
             userDishes = foundDishes;
-            console.log('USER DISHES', userDishes);
         })
         .then(e => {
            Dish.find({}, function(err, allDishes){
@@ -65,18 +60,9 @@ function showOrder(req, res){
 
 
 function deleteLineItem(req, res){
-    console.log("DELETE LINE ITEM FUNCTION CALLED");
-    
     Order.find({customer: req.user._id}, function(err, order){
         order[0].lineItems = order[0].lineItems.filter(lineItem => lineItem.dish.toString() !== req.params.id);
         // console.log('LINE',lineItems)
         order[0].save((err) => res.redirect('/orders/update'));
-        
     })
-
-    // Order.findOneAndDelete({ _id: req.params.id }, (err, dish) => {
-    //     console.log('////////// REQ PARAMS ID', req.params.id);
-    //     if(err) return res.render('/menus/lunch')
-    //     res.redirect('/lunch');
-    // });
 }

@@ -1,6 +1,5 @@
 var Dish = require('../models/dish');
 
-
 module.exports = {
     index,
     create,
