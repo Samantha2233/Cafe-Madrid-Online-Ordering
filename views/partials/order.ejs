@@ -3,24 +3,31 @@
             <h2>Take Out</h2>
             <div class="take-out-check">
 
-                <a href="orders/34">Update Cart</a>
-                <% if (userDishes) { %>
-                    <%= userDishes %>
-                    <% } %>
+                <a href="orders/update" class="anchor-button">Update Cart</a>
 
-                <div class="">
-                    
+                <% userDishes.forEach(function(userDish){ %>
+                    <div class="whole-line">
+                        <p class="line-item"> 1 <%= userDish.name %></p>
+                        <form action="/orders/<%= userDish._id %>?_method=DELETE" method="POST">
+                            <input  class="delete" type="submit" value="X">
+                        </form>
+                    </div>
+                <% }) %>
+
+
+
+                <div>
                     <table id="take-out-list">
                         <tbody>
                             <tr>
-                                <td colspan="1" class="amount">1</td>
-                                <td colspan="3" class="dish">Chicken Soup</td>
+                                <td colspan="1" class="amount"></td>
+                                <td colspan="3" class="dish"></td>
                                 <td colspan="2" class="price"></td>
                             </tr>
                         
                             <tr>
-                                <td colspan="1" class="amount">1</td>
-                                <td colspan="3" class="dish">Breakfast Riser Sandwich</td>
+                                <td colspan="1" class="amount"></td>
+                                <td colspan="3" class="dish"></td>
                                 <td colspan="2" class="price"></td>
                             </tr>
                             

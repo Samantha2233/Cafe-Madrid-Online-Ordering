@@ -3,6 +3,8 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+//require method override to put or delete data from server
+var methodOverride = require('method-override');
 
 var session = require('express-session');
 var passport = require('passport');
@@ -11,8 +13,6 @@ require('dotenv').config();
 require('./config/database');
 require('./config/passport');
 
-//require method override to put or delete data from server
-var methodOverride = require('method-override');
 
 var indexRouter = require('./routes/index');
 var lunchRouter = require('./routes/lunch');
@@ -40,7 +40,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(methodOverride('method'));
+app.use(methodOverride('_method'));
 
 
 app.use('/', indexRouter);

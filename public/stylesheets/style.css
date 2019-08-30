@@ -479,12 +479,39 @@ header img {
 }
 
 
+
 tbody {
 	width: 100%;
 }
 
  th, td {
 	border-collapse: collapse;
+}
+
+.anchor-button {
+	border: 1px solid var(--burgundy);
+	padding: 5px;
+	border-radius: 5px;
+	text-align: center;
+	display: block;
+	margin: 10px 20px;
+}
+
+.whole-line {
+	display: flex;
+	justify-content: space-between;
+	padding-right: 10px;
+}
+
+
+
+.line-item {
+	padding: 0 0 0 20px;
+}
+
+.delete {
+	border: none;
+	background-color: transparent;
 }
 
 .amount {
@@ -505,7 +532,9 @@ tbody {
 	padding-right: 5px;
 }
 
-
+#order-now {
+	justify-content: flex-end;
+}
 
 
 

@@ -5,7 +5,8 @@ var mongoose = require('mongoose');
 
 module.exports = {
     addDish,
-    showOrder
+    showOrder,
+    deleteLineItem
 }
 
 function addDish(req, res) {
@@ -28,11 +29,10 @@ function addDish(req, res) {
 }
 
 function showOrder(req, res){
-    console.log('SHOW ORDER FUNCTION CALLED');
+    let userDishes;
     let dishRefs = [];
 
     let dishes;
-    let userDishes;
 
     Order.find({customer: req.user._id})
     .then(order => {
@@ -46,6 +46,7 @@ function showOrder(req, res){
         } })
         .then(foundDishes => {
             userDishes = foundDishes;
+            console.log('USER DISHES', userDishes);
         })
         .then(e => {
            Dish.find({}, function(err, allDishes){
@@ -55,14 +56,27 @@ function showOrder(req, res){
                    userDishes,
                    customer: req.user,
                    title: 'Lunch | Cafe Madrid',
-                    pageH1: 'Lunch Menu'
-               })
-           })
-        })
+                   pageH1: 'Lunch Menu'
+               });
+           });
+        });
+    });
+}
+
+
+function deleteLineItem(req, res){
+    console.log("DELETE LINE ITEM FUNCTION CALLED");
+    
+    Order.find({customer: req.user._id}, function(err, order){
+        order[0].lineItems = order[0].lineItems.filter(lineItem => lineItem.dish.toString() !== req.params.id);
+        // console.log('LINE',lineItems)
+        order[0].save((err) => res.redirect('/orders/update'));
+        
     })
 
-    // Order.lineItems.findById(req.params.id, function(err, order){
-    //     console.log('showOrder order', order);
-    //     res.render('/order');
-    // })
+    // Order.findOneAndDelete({ _id: req.params.id }, (err, dish) => {
+    //     console.log('////////// REQ PARAMS ID', req.params.id);
+    //     if(err) return res.render('/menus/lunch')
+    //     res.redirect('/lunch');
+    // });
 }
