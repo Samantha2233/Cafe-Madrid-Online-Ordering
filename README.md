@@ -16,6 +16,10 @@ I had the privilege making Cafe Madrid's website on Wix a few years ago. Wix has
 * JavaScript ES6
 * EJS Templates, HTML5, CSS3, Bootstrap
 
+### Methodologies
+* MVC
+* Responsive Web Design
+
 ### What's Next?
 There is quite a bit that I wish I could've done in this phase of this project! These are a few of my goals for the future:
 * Timing functionality: Lunch and Dinner menus are only available to order from at certain times...
