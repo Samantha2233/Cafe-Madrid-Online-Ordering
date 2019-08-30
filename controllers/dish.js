@@ -27,7 +27,9 @@ function create(req, res){
     //instantiate new dish
     const dish = new Dish(req.body);
     //find all dishes to render
-    Dish.find({});
+    dishes = Dish.find({}, function(err){
+        if(err) console.log(err);
+    });
     // save new dish
     dish.save(function(err){
         if(err) console.log(err);
